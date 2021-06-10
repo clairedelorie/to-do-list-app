@@ -9,25 +9,24 @@ function newItem(){
         alert('Write something on your list!');
       } else {
         $('#list').append(li);
+        $('#input').val('')
         }
 
     //2. Crossing an item out
     function crossOut() {
-        li.toggleClass('strike');
+        li.toggleClass ("strike");
         }
-    
-        li.on('dblclick', function crossOut() {
-            li.toggleClass('strike');
+        li.on("dblclick", function crossOut() {
+        li.toggleClass("strike");
         });
 
     //3. Add the "X" delete button
-      let crossOutButton = $('<crossOutButton></crossOutButton>');
-      crossOutButton.append(document.createTextNode('X'));
+      let crossOutButton = $('<crossOutButton>X</crossOutButton>');
       li.append(crossOutButton);
     
       crossOutButton.on('click', deleteListItem);
-      function deleteListItem(){
-    		li.addClass('delete')
+      function deleteListItem() {
+    		li.addClass('delete');
     	}
 
         // Sort items
